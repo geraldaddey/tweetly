@@ -68,9 +68,26 @@ SettingsStack.navigationOptions = {
 
 SettingsStack.path = '';
 
+
+const MessagesStack = createStackNavigator({
+
+    Messages: Messages
+},
+
+config
+);
+
+MessagesStack.navigationOptions = {
+  tabBarLabel: 'Messages',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
+  ),
+};
+
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
   LinksStack,
+  MessagesStack,
   SettingsStack,
 });
 
